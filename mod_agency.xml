@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1" client="administrator" method="upgrade">
+	<name>mod_agency</name>
+	<author>Christophe Avonture</author>
+	<creationDate>December 2005</creationDate>
+	<copyright>Copyright (C) 2015 - 2016 Christophe Avonture. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>christophe@aesecure.com</authorEmail>
+	<authorUrl>www.aesecure.com</authorUrl>
+	<version>1.0.0</version>
+	<description>MOD_AGENCY_XML_DESCRIPTION</description>
+	<files>
+		<filename module="mod_agency">mod_agency.php</filename>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<folder>assets</folder>
+		<folder>language</folder>
+		<folder>tmpl</folder>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_agency.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_agency.sys.ini</language>
+	</languages>
+	<config>
+       <fields name="params">
+            <fieldset name="basic">
+               <field name="infourl" type="url" filter="url" size="50" validate="url" default="http://YOUR_SITE/config.json" label="MOD_AGENCY_FIELD_INFOURL_LABEL" description="MOD_FEED_FIELD_INFOURL_DESC" />
+			</fieldset>			
+			<fieldset name="advanced">
+               <field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL"	description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+               <field name="moduleclass_sfx" type="textarea" rows="3" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+               <field name="cache" type="list" default="0" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC">
+			       <option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+               </field>
+			</fieldset>			
+      </fields> 
+   </config>
+</extension>
