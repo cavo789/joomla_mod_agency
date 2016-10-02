@@ -3,11 +3,12 @@
 	<name>mod_agency</name>
 	<author>Christophe Avonture</author>
 	<creationDate>December 2005</creationDate>
+	<modificationDate>October 2016</modificationDate>
 	<copyright>Copyright (C) 2015 - 2016 Christophe Avonture. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<authorEmail>christophe@aesecure.com</authorEmail>
 	<authorUrl>www.aesecure.com</authorUrl>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	<description>MOD_AGENCY_XML_DESCRIPTION</description>
 	<files>
 		<filename module="mod_agency">mod_agency.php</filename>
@@ -24,8 +25,17 @@
 	<config>
        <fields name="params">
             <fieldset name="basic">
-               <field name="infourl" type="url" filter="url" size="50" validate="url" default="http://YOUR_SITE/config.json" label="MOD_AGENCY_FIELD_INFOURL_LABEL" description="MOD_FEED_FIELD_INFOURL_DESC" />
-			</fieldset>			
+               <field name="infourl" type="url" filter="url" size="100" validate="url" default="http://YOUR_SITE/config.json" label="MOD_AGENCY_FIELD_INFOURL_LABEL" description="MOD_AGENCY_FIELD_INFOURL_DESC" />
+               <field name="url" type="url" filter="url" size="100" validate="url" default="http://YOUR_SITE" label="MOD_AGENCY_FIELD_URL_LABEL" description="MOD_AGENCY_FIELD_URL_DESC" />
+               <field name="title" type="text" label="MOD_AGENCY_FIELD_TITLE_LABEL" description="MOD_AGENCY_FIELD_TITLE_DESC" default="Your agency name" />
+               <field name="logo" type="url" filter="url" size="100" validate="url" default="http://YOUR_SITE/logo.png" label="MOD_AGENCY_FIELD_LOGO_LABEL" description="MOD_AGENCY_FIELD_LOGO_DESC" />			   
+			   <field name="person" type="text" size="50" default="your name" label="MOD_AGENCY_FIELD_NAME_LABEL" description="MOD_AGENCY_FIELD_NAME_DESC" />
+			   <field name="email" type="text" size="50" default="your email" label="MOD_AGENCY_FIELD_EMAIL_LABEL" description="MOD_AGENCY_FIELD_EMAIL_DESC" />
+			   <field name="country" type="text" size="50" default="your country" label="MOD_AGENCY_FIELD_COUNTRY_LABEL" description="MOD_AGENCY_FIELD_COUNTRY_DESC" />
+			   <field name="skype" type="text" size="50" default="your skype" label="MOD_AGENCY_FIELD_SKYPE_LABEL" description="MOD_AGENCY_FIELD_SKYPE_DESC" />
+			   <field name="phone" type="text" size="50" default="your phone" label="MOD_AGENCY_FIELD_PHONE_LABEL" description="MOD_AGENCY_FIELD_PHONE_DESC" />
+			   <field name="message" type="textarea" cols="100" rows="3" default="your message" label="MOD_AGENCY_FIELD_MESSAGE_LABEL" description="MOD_AGENCY_FIELD_MESSAGE_DESC" />			   
+			</fieldset>
 			<fieldset name="advanced">
                <field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL"	description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
                <field name="moduleclass_sfx" type="textarea" rows="3" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />

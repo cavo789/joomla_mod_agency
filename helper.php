@@ -17,9 +17,10 @@ class ModAgencyHelper {
       
    } // function iscURLEnabled()
 
-   private static function get_content($url, $file) {
+   private static function get_content($params, $file) {
 
       $data=null;
+	  $url=trim($params->get('infourl', null));
       
       if (self::iscURLEnabled() && ($url!=null)) {
          
@@ -69,6 +70,27 @@ class ModAgencyHelper {
          
       }  // if (iscURLEnabled()) 
 
+      if (!file_exists($file)) {
+		  
+         $arr=array();
+		 $arr['url']=$params->get('url','');
+		 $arr['logo']=$params->get('logo','');
+		 $arr['title']=$params->get('title','');
+         $arr['name']=$params->get('name','');
+         $arr['email']=$params->get('email','');
+         $arr['country']=$params->get('country','');
+         $arr['skype']=$params->get('skype','');
+         $arr['phone']=$params->get('phone','');
+         $arr['message']=$params->get('message','');
+		 $arr['color']='#0071bc;';
+		 
+		 $fp = fopen(__DIR__.DS.'config.json', 'w');
+         fwrite($fp, json_encode($arr, JSON_PRETTY_PRINT));
+         fclose($fp);
+         unset($fp);
+
+	  }
+	  
       if (file_exists($file) && is_readable($file)) {     
          $data=json_decode(utf8_encode(file_get_contents($file)),true);
       }
@@ -79,7 +101,7 @@ class ModAgencyHelper {
 
    public static function getInfos($params) {
 
-      return self::get_content(trim($params->get('infourl', null)), __DIR__.DS.'config.json');
+      return self::get_content($params, __DIR__.DS.'config.json');
 
    } // function getInfos()
    
