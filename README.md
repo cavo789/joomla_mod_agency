@@ -27,7 +27,7 @@ The structure of the .json is the following :
 }
 ```
 
-When "InfoURL" is filled in, the module will try to retrieve that file (using cURL) and if successfull, will adapt the parameters of the module.  So, by only updating that file on their server, the web agency can "push" a new information like a new phone number or a new message like "Dear customer, please note that I'll be unavaible during the two first weeks of July...".
+When "InfoURL" is filled in, the module will try to retrieve that file (using cURL) and if successfull, will adapt the parameters of the module.  So, by only updating that file on their server, the web agency can "push" a new information like a new phone number or a new message like "Dear customer, please note that I'll be unavailable during the two first weeks of July...".
 
 ##How to install
 Download a copy of this repository as a ZIP file on your disk and upload that archive to your website.
