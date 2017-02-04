@@ -1,0 +1,12 @@
+backups/
+gulp/
+logs/
+nbproject/
+nbproject/private/
+node_modules/
+vendor/
+vendor/**/.git
+settings.json
+composer.log
+build.bat
+gulpfile.js
