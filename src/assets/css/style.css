@@ -1,0 +1,4 @@
+#mod_agency [class^="icon-"],#mod_agency [class*=" icon-"] {
+    display: inline;
+    padding-left: 10px;
+}

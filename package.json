@@ -1,56 +1,8 @@
-# Project skeleton
-
->  This project contains scripts to start more quickly a project.   The gulp folder contains a lot of scripts that will allow to beautify, lint, minify, ... files and generate the dist folder.
-
-## Building
-
-Use build.bat to run each tasks in the predefined order.
-
-## Tasks order
-
-### 1. Main
-
-1. **backup** : take a backup of all files under the source folder (called `src`).  The zip file  will derived from the package.json file, use `name` and `version` and create f.i. project_v1.0-20170203.zip) 
-
-### 2. SRC
-
-1. **phpcs** : run PHP code sniffer to check the quality of the code
-2. **phpmd** : run PHP Mess Detector to check the quality of the code
-3. **csslint** : run css linting (check syntax)
-4. **jslint** : run js linting (check syntax)
-5. **jsonlint** : run json linting (check syntax)
-6. **phplint** : run php linting (check syntax)
-7. **csscbf** : run css code beautifier
-8. **jscbf** : run js code beautifier
-9. **jsoncbf** : run json code beautifier
-10. **phpcbf** : run php code beautifier
-
-### 3. DIST
-
-1. **delete** : kill the `dist` folder, remove the previous generated files
-2. **copy** : copy files from the `src` folder to the `dist` folder
-3. **js_removedebug** : remove debug infos in javascript files
-4. **php_removedebug** : remove debug infos in php files
-5. **cssmin** : minify the css files
-6. **jsmin** : minify the js files
-7. **jsbanner** : add a banner to .js files
-8. **phpbanner** : add a banner to .php files
-9. **chmod** : set the `dist` folder read-only
-
-## package.json
-
-The  `package.json` file is used by the GULP scripts so that file should exists.   
-
- `package.json` should be edited and the `gulp` node should be created like illustrated below. 
-
-Each task defined in the `gulp` folder will read their own configuration from `package.json`.
-
-```json
 {
-  "name": "project_name",
-  "version": "1.0.0",
-  "description": "small description of the project",
-  "main": "index.php",
+  "name": "mod_agency",
+  "version": "1.0.2",
+  "description": "mod_agency is a module for the Joomla backend and will display informations about the web agency who's responsible for the site. Name, URL, phone number, email, skype, ... of the person in charge of the daily maintenance of the site. mod_agency has been developped by the JUG Wallonie",
+  "main": "mod_agency.php",
   "devDependencies": {
     "csslint-stylish": "0.0.5",
     "del": "^2.2.2",
@@ -85,15 +37,19 @@ Each task defined in the `gulp` folder will read their own configuration from `p
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cavo789/PROJECT_NAME.git"
+    "url": "git+https://github.com/cavo789/mod_agency.git"
   },
-  "keywords": [],
+  "keywords": [
+    "joomla", 
+	"joomla-module",
+	"web-agency"
+  ],
   "author": "christophe@aesecure.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cavo789/PROJECT_NAME/issues"
+    "url": "https://github.com/cavo789/mod_agency/issues"
   },
-  "homepage": "https://github.com/cavo789/PROJECT_NAME#readme",
+  "homepage": "https://github.com/cavo789/mod_agency#readme",
   "gulp": {    
     "editor": {
       "tab_size": 3,
@@ -150,30 +106,29 @@ Each task defined in the `gulp` folder will read their own configuration from `p
       },
       "dist": {
         "delete": {
-          "doit": 1
+          "doit": 0
         },
 		"copy": {
-          "doit": 1
+          "doit": 0
         },
         "removedebug": {
           "js": {
-            "doit": 1
+            "doit": 0
           },
           "php": {
-            "doit": 1
+            "doit": 0
           }
 		},
 		"minify": {
           "css": {
-            "doit": 1
+            "doit": 0
           },
           "js": {
-            "doit": 1
+            "doit": 0
           }
         },
 		"banner": {
 		  "header": [
-	        "<?php",   
             "/**",
             "* <%= info.name %> - <%= info.description %>",
             "* @version   : <%= info.version %>",
@@ -181,27 +136,19 @@ Each task defined in the `gulp` folder will read their own configuration from `p
             "* @license   : <%= info.license %>",
             "* @url       : <%= info.homepage %>",
             "* @package   : <%= new Date().toISOString() %>", 
-            "*/",
-            "?>",
-			""
+            "*/"
 	      ],
           "js": {
-            "doit": 1
+            "doit": 0
           },
           "php": {
-            "doit": 1
+            "doit": 0
           }
 		},
 		"chmod": {
-          "doit": 1
+          "doit": 0
         }
       }      
     }
   }
 }
-```
-
-## Credits
-
-Christophe Avonture | [https://www.aesecure.com](https://www.aesecure.com) 
-

@@ -8,7 +8,10 @@
  */
 
 defined('_JEXEC') or die;
-if(!defined('DS')) define('DS',DIRECTORY_SEPARATOR);
+
+if (!defined('DS')) {
+    define('DS', DIRECTORY_SEPARATOR);
+}
 
 // Include the syndicate functions only once
 require_once __DIR__.DS.'helper.php';

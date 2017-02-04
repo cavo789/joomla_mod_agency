@@ -1,0 +1,28 @@
+{
+	"name": "mod_agency",
+	"description": "mod_agency is a module for the Joomla backend and will display informations about the web agency who's responsible for the site. Name, URL, phone number, email, skype, ... of the person in charge of the daily maintenance of the site. mod_agency has been developped by the JUG Wallonie",
+	"keywords": ["joomla", "joomla-module","web-agency"],
+	"homepage": "https://github.com/cavo789/mod_agency/",
+	"type": "project",
+	"license": "MIT",
+	"require": {
+	},
+	"config": {
+		"preferred-install": "dist"
+	},
+	"authors": [{
+		"name": "Christophe Avonture",
+		"email": "christophe@aesecure.com",
+		"homepage": "https://www.aesecure.com",
+		"role": "Developer"
+	}],
+	"support": {
+		"source": "https://github.com/cavo789/mod_agency",
+		"issues": "https://github.com/cavo789/mod_agency/issues",
+		"docs": "https://github.com/cavo789/mod_agency/blob/master/readme.md"
+	},
+	"require-dev": {
+		"sebastian/phpcpd": "^2.0",
+		"phpmd/phpmd": "^2.6"
+	}
+}
